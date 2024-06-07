@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .mainContainer{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            font-family: SF Pro Display, sans-serif;
+        }
+        .containerContent, .containerTick, .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;  
+        }
+        .containerContent{
+            gap: 20px;
+        }
+        .container{
+            gap: 50px;
+            width: 30%;
+            align-self: center;
+            position: fixed;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #F8F4EB;
+            height: 50vh;
+        }
+        #feedbackParagraph{
+            margin-bottom: 20px;
+        }
+        .thankYouButton{
+            transition: all .5s ease-in-out;
+        }
+        .thankYouButton:hover{
+            transform: scale(1.07);
+            cursor: pointer;
+        }
+        .thankYouButton{
+            transition: all .3s ease-in-out;
+        }
+        .thankYouButton{
+            width: 239px;
+            height: 57px;
+            background-color: #222222; 
+            border: none; color: #ffffff; 
+            padding: 20px, 10px, 20px, 10px; 
+            gap: 40px; 
+            font-family: SF Pro;
+            font-size: 14px;
+            font-weight: 510;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="container">
+            <div class="containerTick">
+                <img class="thankYouCheckImage" style="border-radius: 50%; padding: 20px; background-color: #222222; margin-top: -150px;" src="https://lh3.googleusercontent.com/pw/ABLVV85k7H5trzLaWz577e1Z9wX7AKvGLPUuIiqvtsP5ighzj4PO1f8Vs_4kUH1mZoJBfrmHDZD-Nch8fO3LevdzW7Q4rxV-tLiLOiNe8ObnyXQm3VFbwSJyQdeQ2hXtk8ajUCzoQlHPvfc_9S287aKDw3FQ=w537-h464-s-no-gm?authuser=0" width="160" height="160" alt="">
+            </div>
+            <div class="containerContent">
+                <h2>Thank you</h2>
+                <p id="feedbackParagraph">Your product will be processed soon</p>
+                <button class="thankYouButton" onclick="window.location.href='https://arinadelondon.carrd.co/'">Okay</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

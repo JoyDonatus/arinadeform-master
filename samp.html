@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+       @media only screen and (max-device-width: 1000px){
+        #myFrame{
+            aspect-ratio: 4/3;
+            width: 100%;
+            height: 1500px;
+        }
+
+        body > section.secondSection, body > section.navDiv{
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        #registrationDiv{
+            width: 80% !important;
+            margin-left: 30px !important;
+        }
+        }
+    </style>
+</head>
+<body>
+    <label for="phone" class="labels">Phone Number</label>
+    <div class="telPhoneInputDiv">
+        <span class="iconify" data-icon="flag:gb-4x3"></span>
+        <strong>+44</strong>
+    </div>
+        <input type="tel" name="tel" placeholder="Phone Number">
+        
+        <!--<input class="inputInfo" id="phone" style="width: 100%;" type="tel" autocomplete="tel" name="Phone Number" required="" value="" />
+        <div class="alert alert-info" style="display: none;"></div>-->
+    </div>
+    <div>
+        { name: "United Kingdom", code: "GB", phone: 44 },
+    </div>
+    <div>
+        <p>Click the "Tryit" button to hide the first H1 element in the iframe (another document).</p>
+        <button onclick="getIframeContent('myFrame');">Try it</button>
+    </div>
+    <div>
+        <select name="" id="">
+            <option value="love"></option>
+            <option value="second"></option>
+        </select>
+    </div>
+    <div style="position:relative; display:block; width: 100%; height: max-content;">
+        <iframe id="myFrame" src="https://joydonatus.github.io/arinadeform/threeSetGuasha.html" frameborder="0" width="100%" height="820" style="position:absolute; top:0; left: 0" scrolling="no"></iframe>
+    </div>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                var iframeEL = document.getElementById("myFrame");
+                iframeEL.contentWindow.postMessage('Hide', 'https://joydonatus.github.io/arinadeform/threeSetGuasha.html'); 
+                console.log('Message Footed');
+        }, 100);
+        })
+
+        //setTimeout(function(){
+               // var iframeEL = document.getElementById("myFrame");
+               // iframeEL.contentWindow.postMessage('Hide', 'https://joydonatus.github.io/arinadeform/form.html'); 
+               // console.log('Message Footed');
+       // }, 5000);
+        // console.log(iframe);
+         //const g = document.querySelector("#myFrame").iframe.contentWindow.document.querySelector(".containerDiv");
+         //var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+         //var targetDiv = innerDoc.querySelector(".containerDiv");
+         
+         //console.log(g);
+         //console.log(targetDiv);
+
+         //function getIframeContent(myFrame) {
+            //let frameObj =
+                //document.getElementById(myFrame);
+            //let frameContent = frameObj
+                //.contentWindow.document.body.innerHTML;
+ 
+            //alert("frame content : " + frameContent);
+        // }
+        //function myFunction() {
+           // var iframe = document.getElementById("myFrame");
+          //  var elmnt = iframe.contentWindow.document.getElementsByTagName("DIV")[2];
+           // elmnt.style.display = "none";
+       // }
+    </script>
+</body>
+</html>

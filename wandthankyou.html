@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thank you</title>
+    <link rel="stylesheet" href="./thankyoustyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function receiveMessage(event){
+            console.log(event.data);
+            function myFunction(m) {
+                    if (m.matches){ // If media query matches
+                        $('#orderConfirmationHeader2').css({'margin-left': '10px'});
+                        $('#orderConfirmationHeader2').css({'margin-bottom': '50px'});
+                        $('#orderConfirmationParagraph2').css({'margin-left': '10px'});
+                        $('#orderConfirmationDiv2').css({'width': '100%'});
+                        $('#thankYouDiv2').css({'width': '100%'});
+                        $('#thankYouContainer2').css({'padding-left': '20px'});
+                        $('#orderConfirmationParagraph2').css({'text-align': 'center'});
+                        $('#thankYouDiv2').css({'text-align': 'center'});
+                        $('#orderNumberWand').css({'text-align': 'center'});
+                        $('#thankYouParagraphWand').css({'text-align': 'center'});
+                        $('#orderConfirmationHeader2').css({'text-align': 'center'});
+                    }else {
+                        
+                    }
+                }
+            var m = window.matchMedia("(max-width: 750px)");
+            if(event.data === 'Hide'){
+                myFunction(m);
+                m.addEventListener("change", function() {
+                myFunction(m);
+                });
+            }
+        }
+        window.addEventListener('message', receiveMessage, false);
+        console.log('listener added');
+    </script>
+</head>
+<body>
+    <div class="thankYouContainer" id="thankYouContainer2">
+        <nav class="thankYouNavDiv" id="thankYouNavDiv2">
+            <a class="logoLink" id="logoLink2" href="https://arinadelondon.carrd.co/" target="_top"><img src="https://lh3.googleusercontent.com/pw/ABLVV84HsYT7iW1XMIfnTySxU2Z8wY6odLJ8jk0SA4A4kIGVFPNyup5-XXMw08zJWp8eVeV44UtHmtU-mjXp1PF_KwIa-DYaCVZZt6pxxdX0DJeRZlN3gEetZr88Eauxkmtwzad0Q-s7Op0c6GPJSaoBmPMO=w105-h105-s-no-gm?authuser=0" alt="site logo" width="120" height="120" id="logoImg" class="logoImg"></a>
+        </nav>
+        <div class="thankYouContentMainDiv" id="thankYouContentMainDiv2">
+            <div class="blueTickDiv" id="blueTickDiv2">
+                <img src="#blueTick" alt="">
+            </div>
+            <div class="thankYouContentDiv" id="thankYouContentDiv2">
+                <div class="thankYouDiv" id="thankYouDiv2">
+                    <p class="orderNumber" id="orderNumberWand"></p>
+                    <p class="thankYouParagraph" id="thankYouParagraphWand"></p>
+                </div>
+                <div class="orderConfirmationDiv" id="orderConfirmationDiv2">
+                    <h2 class="orderConfirmationHeader" id="orderConfirmationHeader2">Your Order is confirmed</h2>
+                    <p class="orderConfirmationParagraph" id="orderConfirmationParagraph2">We've accepted your order, and we're getting it ready. Please check your email for your order confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const first_Name = localStorage.getItem('wand-name');
+        const order_Number = localStorage.getItem('wand-order');
+        const wand_ExpDate = localStorage.getItem('wandExpDate');
+
+        document.getElementById('thankYouParagraphWand').textContent = 'Thank you, ' + first_Name + '!';
+        document.getElementById('orderNumberWand').textContent = 'Order #ALW-' + order_Number;
+
+        if(first_Name){
+          const  wres = (new Date()).getTime() > wand_ExpDate;
+            if (wres) {
+                localStorage.removeItem('wand-name');
+                }
+            else{
+                console.log(first_Name);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
+        if(order_Number){
+          const  wresh = (new Date()).getTime() > wand_ExpDate;
+            if (wresh) {
+                localStorage.removeItem('wand-order');
+                }
+            else{
+                console.log(order_Number);
+            }
+            } 
+         else {
+            console.log('no item');
+            }
+    </script>
+</body>
+</html>
